@@ -56,7 +56,7 @@ class SerializerTest extends TestCase
 		$this->assertEquals($result, Json\Serialize(new AcmeWithSerializeWithChild()));
 		$this->assertEquals($result, json_encode(new AcmeWithSerializeWithChild()));
 
-		$result = '{"protectedString":"protected","privateString":"private","child":{"protectedString":"protected","privateString":"private"}}';
+		$result = '{"protectedString":"protected","privateString":"private","child":"nested"}';
 
 		$this->assertEquals($result, Json\Serialize(new AcmeWithNormalizerWithChild()));
 		$this->assertEquals($result, json_encode(new AcmeWithNormalizerWithChild()));

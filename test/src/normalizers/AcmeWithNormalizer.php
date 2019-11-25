@@ -6,9 +6,14 @@ class AcmeWithNormalizer extends \Json\Normalizer
 {
 	public function jsonSerialize()
 	{
-		return [
-			'protectedString' => $this->protectedString,
-			'privateString'   => $this->getPrivateString()
-		];
+		if ($this('nested')) {
+			return static::prepare('nested');
+
+		} else {
+			return static::prepare([
+				'protectedString' => $this->protectedString,
+				'privateString'   => $this->getPrivateString()
+			]);
+		}
 	}
 }
