@@ -9,6 +9,6 @@ class SplFileInfo extends \Json\Normalizer
 {
 	public function jsonSerialize()
 	{
-		return $this->getPathname();
+		return static::prepare($this->getPathname(), $this('nested'));
 	}
 }

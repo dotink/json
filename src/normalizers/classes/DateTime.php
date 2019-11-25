@@ -9,6 +9,6 @@ class DateTime extends \Json\Normalizer
 {
 	public function jsonSerialize()
 	{
-		return $this->format('c');
+		return static::prepare($this->format('c'), $this('nested'));
 	}
 }
