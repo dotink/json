@@ -195,7 +195,7 @@ Normalization works by implementing `JsonSerializable` and wrapping data in norm
 
 It is, of course, possible to extend these objects and use `Json\Serialize`, but you will need to replace instantiation of such with the child class:
 
-```
+```php
 namespace My;
 
 class DateTime extends \DateTime implements Json\Serializable
