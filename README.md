@@ -64,7 +64,7 @@ Which
 
 ### Adding Normalizers
 
-To add a custom object normalizer, simply create a new normalizer whose full class name (includes namesapace) is prefixed by `Json\Normalizer`.  If you want to normalize `My\Library\Acme` you would create `Json\Normalizer\My\Library\Acme`:
+To add a custom object normalizer, simply create a new normalizer whose full class name (includes namespace) is prefixed by `Json\Normalizer`.  If you want to normalize `My\Library\Acme` you would create `Json\Normalizer\My\Library\Acme`:
 
 ```php
 <?php
@@ -134,7 +134,7 @@ class Acme implements Json\Serializable
 }
 ```
 
-### What If I Have Super-Secret Properties That Shouldn't be Normalized... Starting with `_`?
+### What If I Have Super-Secret Properties That Shouldn't Be Normalized... Starting with `_`?
 
 You can sue `Json\SerializeStandardProperties` on your class instead of `Json\SerializeAllProperties`:
 
@@ -147,7 +147,7 @@ class Acme implements Json\Serializable
 
 ### What If I Want To Normalize All Strings As "I'm a teapot?"
 
-You can add the following:
+You can add the following class and make it autoloadable:
 
 ```php
 namespace Json\Normalizer;
