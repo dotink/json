@@ -86,7 +86,7 @@ You can change the namespace in which normalizers are looked for:
 Json\Normalizer::setNamespace('My\Json\Normalizer')
 ```
 
-### What If I Need Additional Dependencies to Normalize My Objects
+### What If I Need Additional Dependencies to Normalize My Objects?
 
 You can register any PSR-11 compatible container to resolve/construct your normalizers:
 
@@ -160,7 +160,7 @@ class Acme implements Json\Serializable
 
 ### What If I Have Super-Secret Properties That Shouldn't Be Normalized... Starting with `_`?
 
-You can sue `Json\SerializeStandardProperties` on your class instead of `Json\SerializeAllProperties`:
+You can use `Json\SerializeStandardProperties` on your class instead of `Json\SerializeAllProperties`:
 
 ```php
 class Acme implements Json\Serializable
