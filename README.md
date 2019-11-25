@@ -104,7 +104,7 @@ Normalizers proxy all instance property/method calls to the underlying object an
 
 ### Will Child Classes Be Using the Parent's Normalizer?
 
-Yes.  Using the previous example `My\Library\AcmeChild` which `extends My\Library\Acme` would use `Json\Normalizer\My\Library\Acme` unless there was a `Json\Normalizer\My\Library\AcmeChild`.
+Yes.  Using the previous example `My\Library\AcmeChild` which extends `My\Library\Acme` would use `Json\Normalizer\My\Library\Acme` unless there was a `Json\Normalizer\My\Library\AcmeChild`.
 
 ### Will My Existing `JsonSerializable` Objects Be Normalized?
 
