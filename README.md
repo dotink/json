@@ -60,8 +60,6 @@ Which outputs:
 "{"date":"2019-11-25 00:00:00.000000","timezone_type":3,"timezone":"America\/Los_Angeles"}"
 ```
 
-Which
-
 ### Adding Normalizers
 
 To add a custom object normalizer, simply create a new normalizer whose full class name (includes namespace) is prefixed by `Json\Normalizer`.  If you want to normalize `My\Library\Acme` you would create `Json\Normalizer\My\Library\Acme`:
