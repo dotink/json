@@ -18,7 +18,7 @@ The above function will prepare your `$data` using available normalizers registe
 
 Normalizing objects operates quite a bit differently.
 
-Which normalizer is used depends on whether or not there is a corresponding normalizer available in the `Json\Normalizer` namespace (by default).
+Which normalizer is used depends on whether or not there is a corresponding normalizer available in the `Json\Normalizer` namespace (by default).  If no corresponding normalizer can be found, it will revert to `Json\Normalizer\_Object` which will normalize all public properties.
 
 For example, included in this library is a `Json\Normalizer\DateTime` class:
 
