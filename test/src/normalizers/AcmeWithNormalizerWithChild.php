@@ -6,8 +6,8 @@ class AcmeWithNormalizerWithChild extends AcmeWithNormalizer
 {
 	public function jsonSerialize()
 	{
-		return static::prepare(parent::jsonSerialize()('data') + [
+		return parent::jsonSerialize() + [
 			'child' => $this->child
-		]);
+		];
 	}
 }

@@ -165,7 +165,7 @@ abstract class Normalizer implements Serializable
 			$method->setAccessible(TRUE);
 		}
 
-		return $method->invoke($this->data, ...$args);
+		return static::prepare($method->invoke($this->data, ...$args));
 	}
 
 
@@ -195,7 +195,7 @@ abstract class Normalizer implements Serializable
 			$property->setAccessible(TRUE);
 		}
 
-		return $property->getValue($this->data);
+		return static::prepare($property->getValue($this->data));
 	}
 
 
