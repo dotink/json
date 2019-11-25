@@ -60,7 +60,7 @@ Which outputs:
 "{"date":"2019-11-25 00:00:00.000000","timezone_type":3,"timezone":"America\/Los_Angeles"}"
 ```
 
-Which 
+Which
 
 ### Adding Normalizers
 
@@ -134,7 +134,7 @@ class Acme implements Json\Serializable
 }
 ```
 
-### What If I Have Super-Secrete Properties That Shouldn't be Normalized... Starting with `_`?
+### What If I Have Super-Secret Properties That Shouldn't be Normalized... Starting with `_`?
 
 You can sue `Json\SerializeStandardProperties` on your class instead of `Json\SerializeAllProperties`:
 
@@ -142,6 +142,22 @@ You can sue `Json\SerializeStandardProperties` on your class instead of `Json\Se
 class Acme implements Json\Serializable
 {
 	use Json\SerializeStandardProperties;
+}
+```
+
+### What If I Want To Normalize All Strings As "I'm a teapot?"
+
+You can add the following:
+
+```php
+namespace Json\Normalizer;
+
+class _String extends \Json\Normalizer
+{
+	public function jsonSerialize()
+	{
+		return "I'm a teapot";
+	}
 }
 ```
 
