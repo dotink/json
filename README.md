@@ -65,8 +65,6 @@ Which outputs:
 To add a custom object normalizer, simply create a new normalizer whose full class name (includes namespace) is prefixed by `Json\Normalizer`.  If you want to normalize `My\Library\Acme` you would create `Json\Normalizer\My\Library\Acme`:
 
 ```php
-<?php
-
 namespace Json\Normalizer\My\Library;
 
 class Acme extends \Json\Normalizer
@@ -96,7 +94,35 @@ You can register any PSR-11 compatible container to resolve/construct your norma
 Json\Normalizer::setContainer($container);
 ```
 
-### What If I Need to Access Protected/Private Properties/Methods When Normalizing My Objects?
+### What If I Need To Normalize My Object Differently If It's Nested In Another Object?
+
+You can determine whether or not the normalizer is nested using `$this('nested')`:
+
+```php
+namespace Json\Normalizer\My\Library;
+
+class Acme extends \Json\Normalizer
+{
+	public function jsonSerialize()
+	{
+		if ($this('nested')) {
+
+			//
+			// Return nested object's normalization
+			//
+
+		} else {
+
+			//
+			// Return non-nested object's normalization
+			//
+
+		}
+	}
+}
+```
+
+### What If I Need To Access Protected/Private Properties/Methods When Normalizing My Objects?
 
 Normalizers proxy all instance property/method calls to the underlying object and will use reflection to access the data/method if it's not accessible, so calling `$this->protectedProperty` or `$this->privateMethod()` will work as if the normalizer's `jsonSerialize()` method was on the class itself.
 
