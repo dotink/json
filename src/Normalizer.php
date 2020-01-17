@@ -36,7 +36,7 @@ abstract class Normalizer implements Serializable
 	 *
 	 * @var mixed
 	 */
-	protected $data = NULL;
+	private $data = NULL;
 
 
 	/**
@@ -44,7 +44,7 @@ abstract class Normalizer implements Serializable
 	 *
 	 * @var bool
 	 */
-	protected $nested = TRUE;
+	private $nested = TRUE;
 
 
 	/**
@@ -52,7 +52,7 @@ abstract class Normalizer implements Serializable
 	 *
 	 * @var ReflectionObject
 	 */
-	protected $reflection = NULL;
+	private $reflection = NULL;
 
 
 	/**
@@ -67,6 +67,8 @@ abstract class Normalizer implements Serializable
 
 		if (is_object($data)) {
 			if ($data instanceof Normalizer) {
+				$data->nested = $nested;
+
 				return $data;
 			}
 
